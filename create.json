@@ -1,0 +1,9 @@
+{
+	"host" : "127.0.0.1",
+	"username" : "root",
+	"password" : "",
+	"dbname" : "uuid1",
+	"table" : "table2",
+	"field" : "uuid_field",
+	"number" : 5
+}
