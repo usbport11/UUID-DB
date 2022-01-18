@@ -4,8 +4,14 @@ require_once("genetateUUID.php");
 $uuidLength = 36;
 $path = dirname(__FILE__);
 $configName = "create.json";
+if(!file_exists($path . "\\" . $configName)) {
+	die("Config file not found\n");
+}
 $source = file_get_contents($path . "\\" . $configName);
 $config = json_decode($source);
+if(!$config) {
+	die("Config file error\n");
+}
 
 $conn = new mysqli($config->{"host"}, $config->{"username"}, $config->{"password"});
 if($conn->connect_error) {
