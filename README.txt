@@ -1,4 +1,4 @@
-Tested on XAMPP (Windows 10)
+Tested on XAMPP (Windows)
 
 Simple php scripts.
 
