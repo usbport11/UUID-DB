@@ -1,5 +1,5 @@
 <?php
-require_once("genetateUUID.php");
+require_once("generateUUID.php");
 
 $uuidLength = 36;
 $path = dirname(__FILE__);
