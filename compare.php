@@ -1,11 +1,14 @@
 <?php
 $path = dirname(__FILE__);
 $configName = "compare.json";
-$source = file_get_contents($path . "\\" . $configName);
-if(!$source) {
-	die();
+if(!file_exists($path . "\\" . $configName)) {
+	die("Config file not found\n");
 }
-
+$source = file_get_contents($path . "\\" . $configName);
+$config = json_decode($source);
+if(!$config) {
+	die("Config file error\n");
+}
 
 $config = json_decode($source);
 
