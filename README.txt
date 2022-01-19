@@ -1,6 +1,5 @@
-Tested on XAMPP (Windows)
+Generate, copy, compare uuid tables using php.
 
-Simple php scripts.
 
 Each script has own config file:
 create.json
