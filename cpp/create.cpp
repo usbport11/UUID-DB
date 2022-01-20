@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
-//#include <jdbc\mysql_driver.h>
+
 #include <jdbc\mysql_connection.h>
 #include <jdbc\cppconn\resultset.h>
 #include <jdbc\cppconn\driver.h>
