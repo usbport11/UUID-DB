@@ -1,7 +1,7 @@
 #include <jdbc/mysql_driver.h>
 #include <jdbc/mysql_connection.h>
 #include <rapidjson/document.h>
-#inlcude <stdlib.h>
+#include <stdlib.h>
 #include <time.h>
 
 bool checkConfig(const rapidjson::Document& config) {
