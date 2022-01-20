@@ -8,7 +8,7 @@ C++ - Preprocessor - Definitions = CPPCONN_PUBLIC_FUNC=
 Put near exe ddl files: libcrypto-1_1.dll, libssl-1_1.dll, mysqlcppconn-9-vs14.dll
 
 Json
-Use rapidjson
+Use RapidJSON
 
 UUID
 Use UUID_v4
