@@ -472,7 +472,7 @@ int main(int argc, char** argv) {
 		create(path);
 		return 0;
 	}
-	if (!parameter.compare("update")) {
+	if (!parameter.compare("copy")) {
 		copy(path);
 		return 0;
 	}
