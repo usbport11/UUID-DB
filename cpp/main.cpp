@@ -5,6 +5,7 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <filesystem>
 
 #include <jdbc\mysql_connection.h>
 #include <jdbc\cppconn\resultset.h>
@@ -463,18 +464,21 @@ int main(int argc, char** argv) {
 		return 1;
 	}
 
-	std::string path = argv[0];
-	int last = path.find_last_of("\\");
-	path = path.substr(0, last);
+	std::string path = std::experimental::filesystem::current_path().string();
+	std::string parameter = argv[1];
+	std::transform(parameter.begin(), parameter.end(), parameter.begin(), ::tolower);
 
-	if (!strcmp(argv[1], "create")) {
+	if (!parameter.compare("create")) {
 		create(path);
+		return 0;
 	}
-	if (!strcmp(argv[1], "copy")) {
+	if (!parameter.compare("update")) {
 		copy(path);
+		return 0;
 	}
-	if (!strcmp(argv[1], "compare")) {
+	if (!parameter.compare("compare")) {
 		compare(path);
+		return 0;
 	}
 
 	std::cout << "Unknown parameter" << std::endl;
