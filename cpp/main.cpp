@@ -473,7 +473,7 @@ int main(int argc, char** argv) {
 	if (!strcmp(argv[1], "copy")) {
 		copy(path);
 	}
-	if (!strcmp(argv[1], "comodare")) {
+	if (!strcmp(argv[1], "compare")) {
 		compare(path);
 	}
 
