@@ -1,5 +1,5 @@
 Generate, copy, compare uuid tables using php.
-
+In cpp folder c++ analog.
 
 Each script has own config file:
 create.json
