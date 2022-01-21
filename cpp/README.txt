@@ -1,5 +1,6 @@
-MySQL
+Visual Studio 2019 CE
 
+MySQL
 Download mysql-installer-community-8.0.28.0.msi from official MySQL site.
 Linker - Input - Property - Additional Dependencies = C:\Program Files (x86)\MySQL\Connector C++ 8.0\lib\vs14\mysqlcppconn.lib
 Linker - Main - Additional library directory = C:\Program Files (x86)\MySQL\Connector C++ 8.0\lib
