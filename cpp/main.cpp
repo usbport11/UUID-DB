@@ -454,12 +454,30 @@ bool compare(std::string path) {
 }
 
 int main(int argc, char** argv) {
+	if (argc <= 1) {
+		std::cout << "Too few parameters" << std::endl;
+		return 1;
+	}
+	if (argc > 2) {
+		std::cout << "Too many parameters" << std::endl;
+		return 1;
+	}
+
 	std::string path = argv[0];
 	int last = path.find_last_of("\\");
 	path = path.substr(0, last);
 
-	compare(path);
-	std::cout << "Bye!" << std::endl;
+	if (!strcmp(argv[1], "create")) {
+		create(path);
+	}
+	if (!strcmp(argv[1], "copy")) {
+		copy(path);
+	}
+	if (!strcmp(argv[1], "comodare")) {
+		compare(path);
+	}
+
+	std::cout << "Unknown parameter" << std::endl;
 
 	return 0;
 }
