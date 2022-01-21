@@ -1,0 +1,15 @@
+{
+	"host" : "127.0.0.1",
+	"username" : "root",
+	"password" : "",
+	"source" : {
+		"dbname" : "uuidvc",
+		"table" : "table1",
+		"field" : "uuid_field"
+	},
+	"destination" : {
+		"dbname" : "uuidvc2",
+		"table" : "tablea",
+		"field" : "uuid_data"
+	}
+}
