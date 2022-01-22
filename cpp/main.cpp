@@ -130,7 +130,6 @@ bool create(std::string path) {
 
 	path += "\\" + filename;
 	json = getFileData(path);
-	std::cout << path << std::endl;
 	if (!json) {
 		return false;
 	}
@@ -245,7 +244,6 @@ bool copy(std::string path) {
 
 	path += "\\" + filename;
 	json = getFileData(path);
-	std::cout << path << std::endl;
 	if (!json) {
 		return false;
 	}
@@ -383,7 +381,6 @@ bool compare(std::string path) {
 
 	path += "\\" + filename;
 	json = getFileData(path);
-	std::cout << path << std::endl;
 	if (!json) {
 		return false;
 	}
@@ -423,6 +420,7 @@ bool compare(std::string path) {
 	std::vector<std::string> sourceArray;
 	std::vector<std::string> destinationArray;
 	std::vector<std::string> diff;
+	std::vector<std::string> intersect;
 
 	pstmt = connection->prepareStatement(sqlGetSourceData);
 	result = pstmt->executeQuery();
@@ -438,13 +436,22 @@ bool compare(std::string path) {
 	}
 	if (result) delete result;
 
-	std::set_symmetric_difference(std::begin(sourceArray), std::end(sourceArray),
-		std::begin(destinationArray), std::end(destinationArray),
+	std::set_symmetric_difference(sourceArray.begin(), sourceArray.end(),
+		destinationArray.begin(), destinationArray.end(),
 		std::back_inserter(diff));
 
-	for (auto& s : diff)
-		std::cout << s << std::endl;
+	std::set_intersection(sourceArray.begin(), sourceArray.end(),
+		destinationArray.begin(), destinationArray.end(),
+		std::back_inserter(intersect));
 
+	std::cout << "Unique UUIDs" << std::endl;
+	for (std::vector<std::string>::iterator it = diff.begin(); it != diff.end(); it++)
+		std::cout << *it << std::endl;
+	std::cout << "UUID duplicates" << std::endl;
+	for (std::vector<std::string>::iterator it = intersect.begin(); it != intersect.end(); it++)
+		std::cout << *it << std::endl;
+
+	diff.clear();
 	sourceArray.clear();
 	destinationArray.clear();
 
